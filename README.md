@@ -3,6 +3,60 @@
 ## Roll: 1810020
 ## Date of Submission:19/08/2023
 
+### Exp No: 01
+### Exp Name: Study of Convolution of Two Signals using MATLAB
+#### Theory:
+The study of convolution involves understanding how two signals interact and combine to create a new signal. Convolution is a fundamental concept in signal processing and mathematics that finds applications in various fields, including signal analysis, image processing, and engineering.Studying the convolution of two signals is pivotal in understanding how signals interact and create new signals based on their characteristics. This concept has broad applications in various fields and provides insights into system behavior and signal processing operations.
+#### Code:
+```
+x = [ 1 2 3 4]; 
+h = [ 4 4 3 2]; 
+m=length(x); 
+l=length(h); 
+X=[x,zeros(1,l)]; 
+H=[h,zeros(1,m)]; 
+z=[]; 
+for i=1:m 
+g=h.*x(i); 
+z=[z;g]; 
+end 
+[r c] = size(z); 
+k = r+c; 
+t =2; 
+Y =[]; 
+cd =0; 
+while(t<=k) 
+for i=1:r 
+for j=1:c 
+if((i+j)==t) 
+cd = cd+ z(i,j); 
+end 
+end 
+end 
+t = t+1; 
+Y = [Y cd]; 
+cd =0; 
+end 
+subplot(3,1,1); 
+stem(x); 
+xlabel('n'); 
+ylabel('x'); 
+title('1st Signal'); 
+subplot(3,1,2); 
+stem(h); 
+xlabel('n'); 
+ylabel('h'); 
+title('2nd Signal'); 
+subplot(3,1,3); 
+stem(Y); 
+xlabel('n'); 
+ylabel('Y'); 
+title('Convoluted Signal');
+```
+#### Output:
+![Experiment-1_page3_image](https://github.com/Dragorrik/Lab-Reports-ECE-4124/assets/86437161/08080f60-0ff7-4052-bf68-27968b33a4ec)
+#### Discussion & Conclusion:
+In this instance, we performed convolution between two signals manually, without employing the conv() function. To validate the accuracy of our manual computation, we also utilized the conv() function and compared the results. Remarkably, the outcomes from both approaches were found to be identical, confirming the successful execution of the convolution process.
 ### Exp No: 02
 ### Exp Name:  Study of Circular Convolution, Plotting of Figures, Summation, Subtraction and Particular Shapes of Two Signals Using MATLAB
 #### Theory:
