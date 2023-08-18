@@ -1,6 +1,6 @@
 # Lab-Reports-ECE-4124
 ## Name: Md. Aarik Enam
-## Roll: 1810020
+## Roll: 1810013
 ## Date of Submission:19/08/2023
 
 ### Exp No: 01
